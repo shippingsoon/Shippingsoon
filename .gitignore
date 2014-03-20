@@ -1,0 +1,4 @@
+backup
+application/config/database.*
+application/config/config.*
+application/models
