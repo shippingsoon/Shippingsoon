@@ -1,61 +1,28 @@
 			<div class="recent-articles wrapper">
 				<div class="container">
-					<section class="row">
-						<h2>Recent Articles</h2><br/>
-					</section>
+					<h2>Recent Articles</h2><br/>
 					<div class="row">
+						<?php foreach ($articles AS $index => $article): ?>
 						<div class="col-md-3">
-							<article class="article-green">
-								<img src="<?= base_url('assets/img/core/recent/1.jpg') ?>" class="img-responsive2"  alt="web server"/>
-								<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>" class="read-more" title="Read More">
-									<i class="fa fa-mail-forward fa-1x"></i>
+							<article class="<?= $colors[$index] ?>">
+								<header>
+									<img src="<?= base_url("uploads/articles/img/{$article['article_id']}/0.jpg") ?>" class="img-responsive2"  alt=""/>
+								</header>
+								<a href="<?= base_url(strtolower("blog/{$article['category']}/{$article['slug']}/{$article['article_id']}")) ?>" class="read-more transition" title="Read more about <?= $article['title'] ?>">
+									<i class="fa transition fa-mail-forward fa-1x"></i>
 								</a>
-								<time class="opensans" datetime="2014-02-10">Feb<br/>5/14</time>
-								<h3 class="opensans">
-									<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>">How to seek...</a>
-								</h3>
-								<p class="opensans">Porta felis euismod semper donec sed odio dui cras justo. Quisque ante et in.</p>
+								<time class="opensans transition" datetime="<?= $article['date_created'] ?>"><?= date('M<\b\r/>d/y', strtotime($article['date_created'])) ?></time>
+								<h4 class="opensans title">
+									<a class="transition" href="<?= base_url(strtolower("blog/{$article['category']}/{$article['slug']}/{$article['article_id']}")) ?>" title="Read more about <?= $article['title'] ?>">
+										<?= $article['title'] ?>
+									</a>
+								</h4>
+								<p class="opensans">
+									<?= $article['description'] ?>
+								</p>
 							</article>
 						</div> <!-- /.col-md-3 -->
-						<div class="col-md-3">
-							<article class="article-red">
-								<img src="<?= base_url('assets/img/core/recent/2.jpg') ?>" class="img-responsive2"  alt="web server"/>
-								<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>" class="read-more" title="Read More">
-									<i class="fa fa-mail-forward fa-1x"></i>
-								</a>
-								<time class="opensans" datetime="2014-02-10">Feb<br/>3/14</time>
-								<h3 class="opensans">
-									<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>">Ultricies sapien</a>
-								</h3>
-								<p class="opensans">Curabitur pede eu metus molestie cupidatat arcu turpis molestie.</p>
-							</article>
-						</div> <!-- /.col-md-3 -->
-						<div class="col-md-3">
-							<article class="article-blue">
-								<img src="<?= base_url('assets/img/core/recent/3.jpg') ?>" class="img-responsive2"  alt="web server"/>
-								<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>" class="read-more" title="Read More">
-									<i class="fa fa-mail-forward fa-1x"></i>
-								</a>
-								<time class="opensans" datetime="2014-02-10">Feb<br/>3/14</time>
-								<h3 class="opensans">
-									<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>">Sodales nibh</a>
-								</h3>
-								<p class="opensans">Sapien consequat et velit, suspendisse quis vivamus, molestie eu quam.</p>
-							</article>
-						</div> <!-- /.col-md-3 -->
-						<div class="col-md-3">
-							<article class="article-orange">
-								<img src="<?= base_url('assets/img/core/recent/4.jpg') ?>" class="img-responsive2"  alt="web server"/>
-								<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>" class="read-more" title="Read More">
-									<i class="fa fa-mail-forward fa-1x"></i>
-								</a>
-								<time class="opensans" datetime="2014-02-10">Feb<br/>1/14</time>
-								<h3 class="opensans">
-									<a href="<?= base_url('blog/development/how-to-seek-and-destroy-targets/1') ?>">Phasellus mauris</a>
-								</h3>
-								<p class="opensans">Accumsan donec scelerisque eu vero pede. Vestibulum commodo pretium dolor rutrum.</p>
-							</article>
-						</div> <!-- /.col-md-3 -->
+						<?php endforeach ?>
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
 			</div> <!-- /.recent-articles .wrapper -->

@@ -11,3 +11,19 @@ function core_modal(&$data, $header, $body = NULL, $show_modal = TRUE, $redirect
 	//The place we will redirect the user to.
 	$data['redirect_url'] = $redirect_url;
 }
+function set_title(&$data, $title, $domain = FALSE)
+{
+	//Set the page's title.
+	$data['layout']['title'] = html_entity_decode($title.($domain ? ' - '.DOMAIN : ''));
+}
+function set_description(&$data, $description)
+{
+	//Set the page's meta description.
+	$data['layout']['meta_description'] = html_entity_decode($description);
+}
+function shorten($string, $length = 60)
+{
+	if (strlen($string) > $length)
+		return substr($string , 0, $length) . '...';
+	return $string;
+}

@@ -10,7 +10,7 @@ class Contact extends Public_Controller
 		parent::__construct();
 		$this->load->library('form_validation');
 	}
-	
+	//
 	public function index()
 	{
 		//Load the views.
@@ -19,9 +19,9 @@ class Contact extends Public_Controller
 		$this->load->view('contact/form');
 		$this->load->view('contact/index');
 		$this->load->view('core/modal');
-		$this->load->view('core/footer');
-		
+		$this->load->view('core/footer', $this->data['layout']);
 	}
+	//
 	public function feedback()
 	{
 		//An array of validation rules.
@@ -54,10 +54,10 @@ class Contact extends Public_Controller
 		//If the form is submitted and valid, run this block of code.
 		if ($this->form_validation->run()) {
 			$to = 'coreyalexcorbett@gmail.com';
-			$subject = 'Shipping Soon - Feedback';
+			$subject = COMPANY.' - Feedback';
 			$message = $this->input->post('message');
-			$headers = 'From: ' . $this->input->post('email') . "\r\n" .
-					'Reply-To: no-reply@shippingsoon.com' . "\r\n";
+			$headers = 'From: '.$this->input->post('email')."\r\n" .
+				'Reply-To: no-reply@shippingsoon.com'."\r\n";
 			if (!$this->input->post('ignore'))
 				$data['status'] = @mail($to, $subject, $message, $headers);
 		}

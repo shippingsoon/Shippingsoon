@@ -6,7 +6,6 @@ class MY_Controller extends CI_Controller
 {
 	public function __construct()
 	{
-		//Load the parent constructor.
 		parent::__construct();
 		//Store the URI segments.
 		$controller = $this->router->class;
@@ -19,9 +18,9 @@ class MY_Controller extends CI_Controller
 				'logged_in' => FALSE
 			));
 		}
-		//An array of data that will be sent to our views.
+		//An array of data that will be sent to the core views.
 		$this->data['layout'] = array(
-			'title' => 'Shipping Soon - ' . (($controller != 'core') ? "$controller/$method" : SLOGAN),
+			'title' => (($controller != 'core') ? ucfirst($controller) . ' - Shipping Soon' : 'Shipping Soon: '. SLOGAN),
 			'meta_description' => 'Shippingsoon is shipping soon. Come back later',
 			'meta_keywords' => 'Shipping Soon, Shipping, Soon, Web Design, Savannah Georgia, PHP, SEO, Content Management System, Programming, MySQL',
 			'controller' => $controller,
@@ -29,7 +28,11 @@ class MY_Controller extends CI_Controller
 			'is_mobile' => $this->agent->is_mobile(),
 			'ajax_call' => (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest'),
 			'logged_in' => ($this->session->userdata('logged_in') === TRUE AND $this->authentication->is_member()),
-			'statistic_id' => $this->statistics->track((int) $this->session->userdata('user_id'), (int) $this->session->userdata('user_group_id'))
+			'statistic_id' => $this->statistics->track((int) $this->session->userdata('user_id'), (int) $this->session->userdata('user_group_id')),
+			'css_files' => array(),
+			'js_files' => array(),
+			'articles' => $this->articles->get_articles(NULL, NULL, 0, 4, array(1, 2, 3), TRUE),
+			'colors' => array('green', 'red', 'blue', 'orange'),
 		);
 		//The user's session data.
 		$this->data['user'] = array(

@@ -4,7 +4,7 @@
 	@copyright
 		-2014 shipping Soon
 	@example
-		-$('.my-terminal').terminal('create', {'user':'anonymous', 'machine':'website'});
+		-$('.my-terminal').terminal('create', {'user':'anonymous', 'host':'website'});
 	@version
 		-Terminal v0.05
 	@dependencies
@@ -19,7 +19,7 @@
 	var settings = {
 		'class_name':'terminal-container',
 		'user':'root',
-		'machine':'shippingsoon',
+		'host':'shippingsoon',
 		'directory':'~',
 		'css':{
 			'display':'block',
@@ -66,6 +66,11 @@
 				});
 			}
 		},
+		'clear':function(){
+			//Clear the terminal.
+			$(settings.class_name).html($('.terminal-left:last, .terminal-right:last'));
+		},
+		//The following 3 commands are only placeholders. Some day they'll actually do something useful.
 		'sudo':function(){
 			prompt('[sudo] password for '+settings.user+':', 1);
 		},
@@ -82,16 +87,14 @@
 					directory = '~/'+arguments[0];
 			}
 			settings.directory = directory;
-		},
-		'clear':function(){
-			//Clear the terminal.
-			$(settings.class_name).html($('.terminal-left:last, .terminal-right:last'));
 		}
 	}
+	//Prompt the user for input.
 	function prompt(message, process_id)
 	{
 		$(settings.class_name).addClass('prompt').attr({'data-prompt':message, 'data-process-id':process_id});
 	}
+	//Run a command.
 	function run(input)
 	{
 		var command = input.split(' ');
@@ -100,7 +103,7 @@
 		else
 			dispatchMessage(input+': command not found');
 	}
-	
+	//Display a message.
 	function dispatchMessage(message)
 	{
 		$("<p></p>", {
@@ -110,7 +113,6 @@
 				'clear':'both',
 			},
 		}).appendTo($(settings.class_name));
-		console.log("hi");
 	}
 	//The methods of this jQuery plugin.
 	var methods = {
@@ -136,7 +138,7 @@
 						'width':'auto',
 						'margin-right':'8px'
 					},
-					'text':settings.user+'@'+settings.machine+':'+settings.directory+'$',
+					'text':settings.user+'@'+settings.host+':'+settings.directory+'$',
 				}).appendTo(terminal);
 				$('<div></div>', {
 					'class':'terminal-right',
@@ -182,7 +184,7 @@
 								$(settings.class_name).removeClass('prompt');
 							}
 							else
-								left.html(settings.user+'@'+settings.machine+':'+settings.directory+'$');
+								left.html(settings.user+'@'+settings.host+':'+settings.directory+'$');
 							left.appendTo($(settings.class_name));
 							
 							right.appendTo($(settings.class_name));

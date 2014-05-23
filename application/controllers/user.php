@@ -102,7 +102,7 @@ class User extends Public_Controller
 			else if ($this->users->exists($email, 'email'))
 				$data['validation_errors'] = "The email entered <b>$email</b> is already in use.";
 			//Register the user and log them in.
-			if ($this->users->add_user($this->input->post())) {
+			if ($this->users->add_user($this->input->post(NULL, TRUE))) {
 				$this->_authenticate($email, $password);
 				$data['success'] = 1;
 			}
@@ -111,8 +111,10 @@ class User extends Public_Controller
 	}
 	private function _handle_form_validation($type, $validation_rules, $callback, $redirect_url = '')
 	{
+		//Set the page's title.
+		set_title($this->data, $type, TRUE);
 		//Determines if we will display a terminal on the login page.
-		$data['no_terminal'] = $this->input->get('no_terminal');
+		$data['no_terminal'] = $this->input->get('no_terminal', TRUE);
 		//The URL the user will be redirected to on a successful login attempt.
 		$data['redirect_url'] = $redirect_url;
 		//If the user is already logged in, redirect them.
@@ -137,7 +139,7 @@ class User extends Public_Controller
 			else
 				$this->load->view('user/register');
 			$this->load->view('core/modal');
-			$this->load->view('core/footer');
+			$this->load->view('core/footer', $this->data['layout']);
 		}
 		else {
 			//Set the core modal's response.
