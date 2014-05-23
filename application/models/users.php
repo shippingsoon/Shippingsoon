@@ -44,7 +44,7 @@ class Users extends CI_Model
 	{
 		//Encrypt the user's password.
 		$salt = generateBlowfishSalt();
-        $password = blowfishCrypt($input['password'], $salt);
+		$password = blowfishCrypt($input['password'], $salt);
 		//Build the update array.
 		$update = array(
 			'user_name' => $input['user_name'],
