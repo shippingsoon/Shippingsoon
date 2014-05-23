@@ -14,7 +14,7 @@ class Users extends CI_Model
 	{
 		//Encrypt the user's password.
 		$salt = generateBlowfishSalt();
-        $password = blowfishCrypt($input['password'], $salt);
+		$password = blowfishCrypt($input['password'], $salt);
 		//Make sure the user name or email address is available.
 		if ($this->exists($input['user_name'], 'user_name') OR $this->exists($input['email'], 'email'))
 			return NULL;
