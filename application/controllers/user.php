@@ -16,16 +16,8 @@ class User extends Public_Controller
 	{
 		//An array of validation rules.
 		$validation_rules = array(
-			array(
-				'field' => 'email',
-				'label' => 'Email Address',
-				'rules' => 'trim|max_length[100]|valid_email|required'
-			),
-			array(
-				'field' => 'password',
-				'label' => 'Password',
-				'rules' => 'trim|max_length[100]|required'
-			)
+			array('field' => 'email', 'label' => 'Email Address', 'rules' => 'trim|max_length[100]|valid_email|required'),
+			array('field' => 'password', 'label' => 'Password', 'rules' => 'trim|max_length[100]|required')
 		);
 		$form_validation_callback = function(&$data) {
 			$email = $this->input->post('email', TRUE);
@@ -70,26 +62,10 @@ class User extends Public_Controller
 		}
 		//An array of validation rules.
 		$validation_rules = array(
-			array(
-				'field' => 'user_name',
-				'label' => 'User Name',
-				'rules' => 'trim|min_length[4]|max_length[20]|alpha|required'
-			),
-			array(
-				'field' => 'email',
-				'label' => 'Email Address',
-				'rules' => 'trim|max_length[150]|valid_email|required'
-			),
-			array(
-				'field' => 'password',
-				'label' => 'Password',
-				'rules' => 'trim|min_length[6]|required'
-			),
-			array(
-				'field' => 'ignore',
-				'label' => '',
-				'rules' => 'trim|max_length[1]|alpha|required'
-			)
+			array('field' => 'user_name', 'label' => 'User Name', 'rules' => 'trim|min_length[4]|max_length[20]|alpha|required'),
+			array('field' => 'email', 'label' => 'Email Address', 'rules' => 'trim|max_length[150]|valid_email|required'),
+			array('field' => 'password', 'label' => 'Password', 'rules' => 'trim|min_length[6]|required'),
+			array('field' => 'ignore', 'label' => '', 'rules' => 'trim|max_length[1]|alpha|required')
 		);
 		$form_validation_callback = function(&$data) {
 			$user_name = $this->input->post('user_name', TRUE);

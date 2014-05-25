@@ -25,8 +25,11 @@
 		<?= css_asset('prettify/sons-of-obsidian.css') ?>
 <?php endif ?>
 		<?= css_asset('core.css?t='.time()) ?>
-<?php if ($controller == 'admin'): ?>
+<?php if ($controller === 'admin'): ?>
 		<?= css_asset('admin.css?t='.time()) ?>
+<?php endif ?>
+<?php if ($controller === 'about' AND $method === 'credits'): ?>
+		<?= css_asset('about/about.css?t='.time()) ?>
 <?php endif ?>
 <?php foreach ($css_files AS $file): ?>
 		<link href="<?= $file ?>" rel="stylesheet" type="text/css" />

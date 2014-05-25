@@ -43,6 +43,8 @@ $route['404_override'] = '';
 //about/index
 $route['what-does-shipping-soon-mean'] = 'about';
 $route['what-does-shipping-soon-mean/resume'] = 'about/resume';
+//about/credits
+$route['credits'] = 'about/credits';
 //portfolio/search
 $route['portfolio/search/(:num)/(:num)/(:any)'] = 'portfolio/search/$1/$2/$3';
 $route['portfolio/search/(:num)/(:num)'] = 'portfolio/search/$1/$2';

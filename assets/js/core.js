@@ -1,7 +1,7 @@
 //
 window.onpopstate = function(e)
 {
-    if (e.state) {
+	if (e.state) {
 		$('#offset').val(e.state.offset);
 		$('#limit').val(e.state.limit);
 		$('.search-query').attr({'data-onpopstate':1, 'data-enabled':0});
@@ -203,17 +203,17 @@ jQuery(document).ready(function($) {
 			$('.dropdown-toggle.'+type).html(label+' <span class="caret"></span>');
 			$.each($('.search-query').tagit('assignedTags'), function(key, tag) {
 				parent.find('a').each(function(index, dom) {
-                    if (tag.toLowerCase() == dom.innerHTML.toLowerCase()) {
-                        $('.tagit .tagit-label').each(function(k, val) {
-                            if (tag.toLowerCase() == val.innerHTML.toLowerCase()) {
-                                tags.splice(tags.indexOf(tag), 1);
-                                $('.search-query').val(tags.join(','))
-                                $(this).parent().remove();
-                            }
-                        })
-                    }
-                });
-            });
+					if (tag.toLowerCase() == dom.innerHTML.toLowerCase()) {
+						$('.tagit .tagit-label').each(function(k, val) {
+							if (tag.toLowerCase() == val.innerHTML.toLowerCase()) {
+								tags.splice(tags.indexOf(tag), 1);
+								$('.search-query').val(tags.join(','))
+								$(this).parent().remove();
+							}
+						})
+					}
+				});
+			});
 			if (value != 'all')
 				$('.search-query').tagit('createTag', value);
 			else

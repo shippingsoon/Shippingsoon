@@ -21,6 +21,9 @@
 					when their product will arrive</a>), <strong>shipping soon</strong> means your product is on its way.
 					<!-- I see what you did there -->
 				</p>
+				<h4 class="centered">
+					<a href="<?= base_url('credits') ?>" class="opensans light-weight" title="Credits">Credits</a>
+				</h4>
 			</div> <!-- /.col-md-12 resume -->
 			<div class="col-md-6">
 				<h4>Programming Proficiencies</h4>

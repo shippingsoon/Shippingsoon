@@ -16,16 +16,8 @@ class User extends Public_Controller
 	{
 		//An array of validation rules.
 		$validation_rules = array(
-			array(
-				'field' => 'email',
-				'label' => 'Email Address',
-				'rules' => 'trim|max_length[100]|valid_email|required'
-			),
-			array(
-				'field' => 'password',
-				'label' => 'Password',
-				'rules' => 'trim|max_length[100]|required'
-			)
+			array('field' => 'email', 'label' => 'Email Address', 'rules' => 'trim|max_length[100]|valid_email|required'),
+			array('field' => 'password', 'label' => 'Password', 'rules' => 'trim|max_length[100]|required')
 		);
 		$form_validation_callback = function(&$data) {
 			$email = $this->input->post('email', TRUE);
@@ -70,26 +62,10 @@ class User extends Public_Controller
 		}
 		//An array of validation rules.
 		$validation_rules = array(
-			array(
-				'field' => 'user_name',
-				'label' => 'User Name',
-				'rules' => 'trim|min_length[4]|max_length[20]|alpha|required'
-			),
-			array(
-				'field' => 'email',
-				'label' => 'Email Address',
-				'rules' => 'trim|max_length[150]|valid_email|required'
-			),
-			array(
-				'field' => 'password',
-				'label' => 'Password',
-				'rules' => 'trim|min_length[6]|required'
-			),
-			array(
-				'field' => 'ignore',
-				'label' => '',
-				'rules' => 'trim|max_length[1]|alpha|required'
-			)
+			array('field' => 'user_name', 'label' => 'User Name', 'rules' => 'trim|min_length[4]|max_length[20]|alpha|required'),
+			array('field' => 'email', 'label' => 'Email Address', 'rules' => 'trim|max_length[150]|valid_email|required'),
+			array('field' => 'password', 'label' => 'Password', 'rules' => 'trim|min_length[6]|required'),
+			array('field' => 'ignore', 'label' => '', 'rules' => 'trim|max_length[1]|alpha|required')
 		);
 		$form_validation_callback = function(&$data) {
 			$user_name = $this->input->post('user_name', TRUE);
@@ -102,7 +78,7 @@ class User extends Public_Controller
 			else if ($this->users->exists($email, 'email'))
 				$data['validation_errors'] = "The email entered <b>$email</b> is already in use.";
 			//Register the user and log them in.
-			if ($this->users->add_user($this->input->post())) {
+			if ($this->users->add_user($this->input->post(NULL, TRUE))) {
 				$this->_authenticate($email, $password);
 				$data['success'] = 1;
 			}
@@ -111,8 +87,10 @@ class User extends Public_Controller
 	}
 	private function _handle_form_validation($type, $validation_rules, $callback, $redirect_url = '')
 	{
+		//Set the page's title.
+		set_title($this->data, $type, TRUE);
 		//Determines if we will display a terminal on the login page.
-		$data['no_terminal'] = $this->input->get('no_terminal');
+		$data['no_terminal'] = $this->input->get('no_terminal', TRUE);
 		//The URL the user will be redirected to on a successful login attempt.
 		$data['redirect_url'] = $redirect_url;
 		//If the user is already logged in, redirect them.
@@ -137,7 +115,7 @@ class User extends Public_Controller
 			else
 				$this->load->view('user/register');
 			$this->load->view('core/modal');
-			$this->load->view('core/footer');
+			$this->load->view('core/footer', $this->data['layout']);
 		}
 		else {
 			//Set the core modal's response.

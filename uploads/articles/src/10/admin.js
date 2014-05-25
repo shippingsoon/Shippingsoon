@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 						$('.ui-widget-content').attr('placeholder', 'search tags');
 				}
 			});
-			//Allow j
+			//
 			$('#date_created, #date_modified').datetimepicker({
 				//dateFormat:'dd-mm-yy',
 				dateFormat:'yy-mm-dd',

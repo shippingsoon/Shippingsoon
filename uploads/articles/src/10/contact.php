@@ -19,33 +19,17 @@ class Contact extends Public_Controller
 		$this->load->view('contact/form');
 		$this->load->view('contact/index');
 		$this->load->view('core/modal');
-		$this->load->view('core/footer');
+		$this->load->view('core/footer', $this->data['layout']);
 	}
 	//
 	public function feedback()
 	{
 		//An array of validation rules.
 		$validation_rules = array(
-			array(
-				'field' => 'name',
-				'label' => 'Name',
-				'rules' => 'trim|max_length[60]|required'
-			),
-			array(
-				'field' => 'email',
-				'label' => 'Email Address',
-				'rules' => 'trim|max_length[100]|valid_email|required'
-			),
-			array(
-				'field' => 'message',
-				'label' => 'Message',
-				'rules' => 'trim|max_length[500]|required'
-			),
-			array(
-				'field' => 'ignore',
-				'label' => 'ignore',
-				'rules' => ''
-			)
+			array('field' => 'name', 'label' => 'Name', 'rules' => 'trim|max_length[60]|required'),
+			array('field' => 'email', 'label' => 'Email Address', 'rules' => 'trim|max_length[100]|valid_email|required'),
+			array('field' => 'message', 'label' => 'Message', 'rules' => 'trim|max_length[500]|required'),
+			array('field' => 'ignore', 'label' => 'ignore', 'rules' => '')
 		);
 		//Set a default value for the email's status. If the status is false the message was not delivered.
 		$data['status'] = FALSE;
@@ -53,11 +37,11 @@ class Contact extends Public_Controller
 		$this->form_validation->set_rules($validation_rules);
 		//If the form is submitted and valid, run this block of code.
 		if ($this->form_validation->run()) {
-			$to = 'coreyalexcorbett@gmail.com';
-			$subject = 'Shipping Soon - Feedback';
+			$to = 'info@shippingsoon.com';
+			$subject = COMPANY.' - Feedback';
 			$message = $this->input->post('message');
-			$headers = 'From: ' . $this->input->post('email') . "\r\n" .
-				'Reply-To: no-reply@shippingsoon.com' . "\r\n";
+			$headers = 'From: '.$this->input->post('email')."\r\n" .
+				'Reply-To: no-reply@shippingsoon.com'."\r\n";
 			if (!$this->input->post('ignore'))
 				$data['status'] = @mail($to, $subject, $message, $headers);
 		}
