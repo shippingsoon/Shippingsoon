@@ -71,10 +71,11 @@ function get_search_results(offset, limit, tags)
 						href:base_url(((article.category != 'Portfolio') ? 'blog/'+article.category : 'portfolio')+'/'+article.slug+'/'+article.article_id)
 					});
 					template.find('.subtitle').html(article.description);
-					template.find('img').attr({
-						src:base_url('uploads/articles/img/'+article.article_id+'/0.jpg'),
-						alt:article.title
-					});
+					template.find('.photo-frame').prepend($('<img />').attr({
+						'src':base_url('uploads/articles/img/'+article.article_id+'/0.jpg'),
+						'alt':article.title,
+						'class':'img-responsive'
+					}));
 					if (article.source_link)
 						template.find('.overlay > a:eq(1)').removeClass('hide').attr({
 							title:'View '+article.title+"'s source code",

@@ -42,7 +42,6 @@
 						</div> <!-- /.col-md-x .featured-content -->
 						<div class="col-md-<?php if ($controller == 'portfolio' AND $method == 'index'): ?>4<?php else: ?>3<?php endif ?> template hide">
 							<div class="featured photo-frame">
-								<img class="img-responsive" alt=""/>
 								<section class="overlay">
 									<h3 class="title transition"><a class="transition"></a></h3>
 									<p class="subtitle transition"></p>

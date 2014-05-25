@@ -10,12 +10,12 @@
 				<p>
 					The status of any project found on this website is incomplete unless otherwise stated.
 					While it is true that I am not a perfectionist I believe code should be rewritten until it 
-					reflects the best <a href="https://en.wikipedia.org/wiki/Software_design_pattern" target="_blank"/>software</a> engineering
-					<a href="https://en.wikipedia.org/wiki/Category:Programming_principles" target="_blank"/>principles</a> and
-					<a href="https://en.wikipedia.org/wiki/Best_coding_practices" target="_blank" />practices</a>.
+					reflects the best <a href="https://en.wikipedia.org/wiki/Software_design_pattern" target="_blank">software</a> engineering
+					<a href="https://en.wikipedia.org/wiki/Category:Programming_principles" target="_blank">principles</a> and
+					<a href="https://en.wikipedia.org/wiki/Best_coding_practices" target="_blank">practices</a>.
 				</p>
 				<p>
-					On the off chance that this page's elaborate <a href="https://http://en.wikipedia.org/wiki/Search_engine_optimization" target=_blank">SEO:</a><i>
+					On the off chance that this page's elaborate <a href="https://http://en.wikipedia.org/wiki/Search_engine_optimization" target="_blank">SEO:</a><i>
 					"What does shipping soon mean?"</i> attracts some poor and
 					misguided users from Amazon (wondering <a href="https://www.google.com/search?q=What+does+shipping+soon+mean" target="_blank">
 					when their product will arrive</a>), <strong>shipping soon</strong> means your product is on its way.

@@ -56,21 +56,21 @@
 				</ul>
 				<h4>Frameworks/Libraries/APIs:</h4>
 				<ul class="proficiency-list">
-					<li><a href="<?= base_url() ?>" title="CCCCCC">CodeIgniter</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Win32 API</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">jQuery</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">jQuery UI</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">SDL (Simple Direct Media Layer)</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Allegro 2D Graphics Library</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Twitter Bootstrap</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Facebook SDK</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">SFML (Simple and Fast Multimedia Library</a></li>
+					<li><a href="<?= base_url() ?>" title="CodeIgniter">CodeIgniter</a></li>
+					<li><a href="<?= base_url() ?>" title="Win32 API">Win32 API</a></li>
+					<li><a href="<?= base_url() ?>" title="jQuery">jQuery</a></li>
+					<li><a href="<?= base_url() ?>" title="jQuery UI">jQuery UI</a></li>
+					<li><a href="<?= base_url() ?>" title="SDL (Simple Direct Media Layer)">SDL (Simple Direct Media Layer)</a></li>
+					<li><a href="<?= base_url() ?>" title="Allegro 2D Graphics Library">Allegro 2D Graphics Library</a></li>
+					<li><a href="<?= base_url() ?>" title="Twitter Bootstrap">Twitter Bootstrap</a></li>
+					<li><a href="<?= base_url() ?>" title="Facebook SDK">Facebook SDK</a></li>
+					<li><a href="<?= base_url() ?>" title="SFML (Simple and Fast Multimedia Library">SFML (Simple and Fast Multimedia Library</a></li>
 				</ul>
 				<h4>Content Management Systems:</h4>
 				<ul class="proficiency-list">
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Pyrocms</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Phpfox</a></li>
-					<li><a href="<?= base_url() ?>" title="CCCCCC">Drupal</a></li>
+					<li><a href="<?= base_url() ?>" title="Pyrocms">Pyrocms</a></li>
+					<li><a href="<?= base_url() ?>" title="Phpfox">Phpfox</a></li>
+					<li><a href="<?= base_url() ?>" title="Drupal">Drupal</a></li>
 				</ul>
 				<h4 class="separator">Work Experience</h4>
 				<dl>
@@ -83,16 +83,16 @@
 					<li>
 						<ul>
 							<li>
-								<a href="" target="_blank" title="0000">vadenusedcars.com</a> - A website for one of the largest car dealerships</a>
+								<a href="" target="_blank" title="vadenusedcars.com">vadenusedcars.com - A website for one of the largest car dealerships</a>
 							</li>
 							<li>
-								<a href="" target="_blank" title="0000">chevroletcamarosavannah.com</a> - Auto lead generation </a>
+								<a href="" target="_blank" title="chevroletcamarosavannah.com">chevroletcamarosavannah.com - Auto lead generation </a>
 							</li>
 							<li>
-								<a href="" target="_blank" title="0000">revlinkauto.com</a> - tba </a>
+								<a href="" target="_blank" title="revlinkauto.com">revlinkauto.com - tba </a>
 							</li>
 							<li>
-								<a href="" target="_blank" title="0000">carcarepeople.com</a> - Lead generation for extended auto warranty</a>
+								<a href="" target="_blank" title="carcarepeople.com">carcarepeople.com - Lead generation for extended auto warranty</a>
 							</li>
 						</ul>
 					</li>
@@ -126,7 +126,7 @@
 					<li>
 						<ul>
 							<li>
-								<a href="" target="_blank" title="0000">favorbite.com</a> - A Facebook/web service for restaurants</a>
+								<a href="" target="_blank" title="favorbite.com">favorbite.com - A Facebook/web service for restaurants</a>
 							</li>
 						</ul>
 					</li>
@@ -156,7 +156,7 @@
 					<li>
 						<ul>
 							<li>
-								<a href="" target="_blank" title="0000">talkingphotomagnet.com</a> - eCommerce website for photography</a>
+								<a href="" target="_blank" title="talkingphotomagnet.com">talkingphotomagnet.com - eCommerce website for photography</a>
 							</li>
 						</ul>
 					</li>
@@ -189,7 +189,7 @@
 					<li>
 						<ul>
 							<li>
-								<a href="" target="_blank" title="0000">shareideas.me</a> - Social network for sharing and collaborating</a>
+								<a href="" target="_blank" title="shareideas.me">shareideas.me - Social network for sharing and collaborating</a>
 							</li>
 						</ul>
 					</li>
@@ -226,7 +226,7 @@
 					<li>
 						<ul>
 							<li>
-								<a href="" target="_blank" title="0000">ssualphas.org</a> -  Fraternity website</a>
+								<a href="" target="_blank" title="ssualphas.org">ssualphas.org -  Fraternity website</a>
 							</li>
 						</ul>
 					</li>
