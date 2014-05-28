@@ -15,8 +15,8 @@
 			<div class="col-md-6">
 				<h3>Special Thanks</h3>
 				<ul class="list-unstyled">
-					<li><a href="http://ellislab.com/codeigniter" title="Codeigniter" target="_blank">Codeigniter</a></li>
-					<li><a href="http://jquery.com/" title="jQuery" target="_blank">jQuery</a></li>
+					<li><a href="http://ellislab.com/codeigniter" title="Codeigniter" target="_blank">Codeigniter devs</a></li>
+					<li><a href="http://jquery.com/" title="jQuery" target="_blank">jQuery contributors</a></li>
 					<li><a href="http://jqueryui.com/" title="jQuery-ui" target="_blank">jQuery-ui</a></li>
 					<li><a href="http://getbootstrap.com/" title="Twitter Bootstrap" target="_blank">Twitter Bootstrap</a></li>
 					<li><a href="https://code.google.com/p/google-code-prettify/" title="Google Code Prettify" target="_blank">Google Code Prettify</a></li>

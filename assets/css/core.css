@@ -689,7 +689,7 @@ a {
 	min-height:700px;
 }*/
 #portfolio-carousel {
-	margin-bottom:10px;
+	margin-bottom:40px;
 }
 	#portfolio-carousel .item {
 		max-height:400px;
@@ -910,12 +910,13 @@ a {
 			margin-bottom:20px;
 		}
 			.blog-entry .col-md-8 .title {
-				text-transform:uppercase;
+				/*text-transform:uppercase;*/
 				margin-top:0px;
 			}
 	.blog-entry .title a {
 		text-decoration:none;
-		color:#444;
+		/*color:#444;*/
+		color:inherit;
 		cursor:default;
 	}
 	.blog-entry .chapter {
@@ -924,7 +925,7 @@ a {
 		.blog-entry .chapter h4 {
 			font-weight:bold;
 		}
-		.blog-entry .chapter a:hover {
+		.blog-entry .chapter a:hover, .blog-entry p a:hover {
 			border-bottom:dotted 1px DeepSkyBlue;
 		}
 		.blog-entry .chapter .alert {

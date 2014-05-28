@@ -14,12 +14,12 @@ function core_modal(&$data, $header, $body = NULL, $show_modal = TRUE, $redirect
 function set_title(&$data, $title, $domain = FALSE)
 {
 	//Set the page's title.
-	$data['layout']['title'] = html_entity_decode($title.($domain ? ' - '.DOMAIN : ''));
+	$data['layout']['title'] = htmlentities($title.($domain ? ' - '.DOMAIN : ''));
 }
 function set_description(&$data, $description)
 {
 	//Set the page's meta description.
-	$data['layout']['meta_description'] = html_entity_decode($description);
+	$data['layout']['meta_description'] = htmlentities($description);
 }
 function shorten($string, $length = 60)
 {
