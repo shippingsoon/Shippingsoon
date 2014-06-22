@@ -4,6 +4,8 @@ Shippingsoon
 <div>
 	<p>
 		Shippingsoon is a free and open source content management system I designed in 2012 to host my freelance work and software projects. In 2014 it was redesigned from scratch with Codeigniter, jQuery and Twitter Bootstrap.
+		<br/>
+		<a href="https://www.shippingsoon.com/" title="shippingsoon.com">https://www.shippingsoon.com/</a>
 	</p>
 	<p>
 		Like most of my open source endeavours Shippingsoon will remain in perpetual development until it reflects the best programming
