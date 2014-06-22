@@ -60,7 +60,12 @@
 					<li>
 						PHP
 						<span class="pull-right">
-							<a href="https://github.com/shippingsoon/Shippingsoon" data-placement="left" title="Freelance website built with Codeigniter">
+							<a href="https://github.com/shippingsoon/Shippingsoon" data-placement="left" title="Shippingsoon is a free and open source content management system built with Codeigniter, jQuery and Twitter Bootstrap">
+								<span class="glyphicon glyphicon-star"></span>
+							</a>
+						</span>
+						<span class="pull-right">
+							<a href="<?= base_url('portfolio/favorbitecom/5') ?>" data-placement="left" title="Favorbite is a Facebook/web service for restaurants.">
 								<span class="glyphicon glyphicon-star"></span>
 							</a>
 						</span>
@@ -69,11 +74,7 @@
 								<span class="glyphicon glyphicon-star"></span>
 							</a>
 						</span>
-						<span class="pull-right">
-							<a href="https://www.shippingsoon.com/portfolio/favorbitecom/5" data-placement="left" title="Favorbite">
-								<span class="glyphicon glyphicon-star"></span>
-							</a>
-						</span>
+						
 						<span class="pull-right">
 							<a href="https://www.shippingsoon.com/portfolio/ssuhousinghealthcom/1" data-placement="left" title="SSU Housing Health">
 								<span class="glyphicon glyphicon-star"></span>
