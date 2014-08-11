@@ -40,17 +40,34 @@
 
 $route['default_controller'] = 'core';
 $route['404_override'] = '';
+
 //about/index
 $route['what-does-shipping-soon-mean'] = 'about';
 $route['what-does-shipping-soon-mean/resume'] = 'about/resume';
+
 //about/credits
 $route['credits'] = 'about/credits';
+
 //portfolio/search
 $route['portfolio/search/(:num)/(:num)/(:any)'] = 'portfolio/search/$1/$2/$3';
 $route['portfolio/search/(:num)/(:num)'] = 'portfolio/search/$1/$2';
 $route['portfolio/search/(:num)'] = 'portfolio/search/$1';
 $route['portfolio/search'] = 'portfolio/search';
+
 //portfolio/index
 $route['portfolio/(:any)/(:num)'] = 'portfolio/index/$1/$2';
+
+//sitemap/index
+$route['sitemap.xml'] = 'sitemap/index';
+
+//sitemap/blog
+$route['blog-sitemap.xml'] = 'sitemap/blog';
+
+//sitemap/portfolio
+$route['portfolio-sitemap.xml'] = 'sitemap/portfolio';
+
+//sitemap/search
+$route['search-sitemap.xml'] = 'sitemap/search';
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

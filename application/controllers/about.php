@@ -34,7 +34,7 @@ class About extends Public_Controller
 		set_title($this->data, 'Credits');
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
-		$this->load->view('core/banner', array('title' => $this->data['layout']['title']));
+		//$this->load->view('core/banner', array('title' => $this->data['layout']['title']));
 		$this->load->view('about/credits');
 		$this->load->view('core/footer', $this->data['layout']);
 	}

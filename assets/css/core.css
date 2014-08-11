@@ -583,6 +583,7 @@ a {
 	}
 /* 3.00 Portfolio */
 .portfolio-banner {
+	background-repeat:no-repeat;
 	background-image:url('../img/about/paper-pencil-1681x500.jpg');
 }
 /* 3.10 Featured projects */
@@ -845,7 +846,7 @@ a {
 	position:relative;
 	border-top:solid 1px #AAA;
 	background-color:#A1BECD;
-	background: linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
+	background:linear-gradient(to bottom, #1e5799 0%, #2989d8 50%, #7db9e8 100%);
 }
 	.sky a:hover {
 		font-size:25px;
@@ -899,12 +900,16 @@ a {
 .blog-entry {
 	min-height:700px;
 }
+	.blog-entry video {
+		width:100%;
+	}
 	.blog-entry .col-md-8 {
 		font-weight:400;
 		line-height:1.5em;
 		font-family:Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 		-webkit-font-smoothing:antialiased;
 		font-size:20px;
+		margin-bottom:30px;
 	}
 		.blog-entry .col-md-8 .title {
 			margin-bottom:20px;
@@ -1125,6 +1130,9 @@ a {
 
 /* 5.10 About banner */
 .about-banner {
+	
+	
+	background-repeat:no-repeat;
 	background-image:url('../img/about/paper-pencil-1681x500.jpg');
 }
 /* 5.20 Resume */

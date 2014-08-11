@@ -2,4 +2,5 @@ backup
 application/config/database.*
 application/config/config.*
 uploads/articles/img
+uploads/articles/video
 uploads/document

@@ -67,6 +67,8 @@ class Articles extends CI_Model
 				$where = '(';
 				for ($i = 0; $i < count($category); $i++) {
 					$column = (is_numeric($category[$i])) ? 'a.category_id' : 'ac.title';
+					if (!is_numeric($category[$i]))
+						$category[$i] = "'{$category[$i]}'";
 					$where .= "$column = {$category[$i]}".(($i+1 < count($category)) ? ' OR ' : ')');
 				}
 				$this->db->where($where);

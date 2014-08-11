@@ -49,7 +49,9 @@
 	padding-top:20px;
 	padding-bottom:20px;
 }
-
-	#project-form .tab-pane textarea {
+	#project-form textarea {
 		min-height:100px;
+	}
+	#project-form .tab-pane textarea {
+		min-height:200px;
 	}
