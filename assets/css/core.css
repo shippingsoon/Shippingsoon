@@ -1196,6 +1196,7 @@ a {
 	.resume .glyphicon-star {
 		font-size:12px;
 		margin-left:8px;
+		display:none;
 	}
 	.resume strong {
 		font-weight:normal;

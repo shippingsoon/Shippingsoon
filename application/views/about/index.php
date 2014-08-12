@@ -28,7 +28,8 @@
 			<div class="col-md-6">
 				<h4>Programming Proficiencies</h4>
 				<p>
-					Click on a star to see the language in action.
+					<?php /* Click on a star to see the language in action. */ ?>
+					To see a language in action please visit my <a href="https://github.com/shippingsoon?tab=repositories">github repository</a>.
 				</p>
 				<ul class="proficiency-list list-unstyled">
 					<li>
