@@ -15,6 +15,7 @@ class About extends Public_Controller
 		set_title($this->data, 'What does shipping soon mean?');
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('core/banner', array('title' => $this->data['layout']['title']));
 		$this->load->view('about/index');
 		$this->load->view('core/footer', $this->data['layout']);
@@ -25,6 +26,7 @@ class About extends Public_Controller
 		set_title($this->data, 'Resume', TRUE);
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('core/banner', array('title' => 'Resume'));
 		$this->load->view('about/resume');
 		$this->load->view('core/footer', $this->data['layout']);
@@ -34,6 +36,7 @@ class About extends Public_Controller
 		set_title($this->data, 'Credits');
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		//$this->load->view('core/banner', array('title' => $this->data['layout']['title']));
 		$this->load->view('about/credits');
 		$this->load->view('core/footer', $this->data['layout']);

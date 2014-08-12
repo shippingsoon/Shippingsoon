@@ -15,6 +15,7 @@ class Contact extends Public_Controller
 	{
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('contact/banner-top');
 		$this->load->view('contact/form');
 		$this->load->view('contact/index');

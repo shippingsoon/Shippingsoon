@@ -14,6 +14,7 @@ class Blog extends Public_Controller
 	public function index()
 	{
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('blog/index', $this->data);
 		$this->load->view('blog/recent', $this->data['layout']);
 		$this->load->view('core/footer', $this->data);
@@ -70,6 +71,7 @@ class Blog extends Public_Controller
 			load_resources($this->data['layout'], $this->data['article_id'], 'css');
 		}
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('core/banner', array('title' => ucfirst($this->data['layout']['method'])));
 		$this->load->view('portfolio/breadcrumb', $this->data);
 		$this->load->view('blog/blog-open');

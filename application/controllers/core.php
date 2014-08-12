@@ -16,6 +16,7 @@ class Core extends Public_Controller
 		$this->data['articles'] = $this->articles->get_articles(NULL, $tags, 0, 8);
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('core/carousel-top');
 		$this->load->view('contact/form');
 		$this->load->view('core/carousel-bottom');

@@ -107,6 +107,7 @@ class User extends Public_Controller
 		if (!$this->data['layout']['ajax_call']) {
 			//Load the views.
 			$this->load->view('core/header', $this->data['layout']);
+			$this->load->view('core/navigation', $this->data['layout']);
 			if ($type == 'Login') {
 				$this->load->view('user/login', $data);
 				if ($data['no_terminal'] != 1)

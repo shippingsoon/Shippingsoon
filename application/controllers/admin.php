@@ -15,6 +15,7 @@ class Admin extends Admin_Controller
 	{
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('admin/index', $this->data);
 		$this->load->view('core/footer', $this->data['layout']);
 	}
@@ -126,6 +127,7 @@ class Admin extends Admin_Controller
 		}
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('admin/article', $this->data);
 		$this->load->view('core/footer', $this->data['layout']);
 	}

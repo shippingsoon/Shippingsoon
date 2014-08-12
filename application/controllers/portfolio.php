@@ -65,6 +65,7 @@ class Portfolio extends Public_Controller
 			redirect('portfolio');
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
+		$this->load->view('core/navigation', $this->data['layout']);
 		$this->load->view('core/banner', array('title' => ($article_id) ? $this->data['article']['title'] : 'Portfolio'));
 		if (!$article_id) {
 			$this->load->view('portfolio/featured-open');
@@ -118,6 +119,7 @@ class Portfolio extends Public_Controller
 		if (!$this->data['layout']['ajax_call']) {
 			//Load the views.
 			$this->load->view('core/header', $this->data['layout']);
+			$this->load->view('core/navigation', $this->data['layout']);
 			$this->load->view('core/banner', $this->data);
 			$this->load->view('portfolio/breadcrumb', $this->data);
 			$this->load->view('portfolio/search');
