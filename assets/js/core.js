@@ -102,6 +102,9 @@ function get_search_results(offset, limit, tags)
 		history.pushState({'offset':offset, 'limit':limit, 'tags':tags}, 'Next', base_url('portfolio/search/'+offset+'/'+limit+'/'+encodeURIComponent(tags)));		
 }
 jQuery(document).ready(function($) {
+	//Support placeholder attributes for older versions of Internet Explorer.
+	$('input, textarea').placeholder();
+	
 	$('.core-search .glyphicon-search').click(function(e){
 		$('.core-search').submit();
 	});

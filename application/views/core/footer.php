@@ -113,41 +113,5 @@
 				<a href="https://support.google.com/adsense/answer/12654" title="Enable Javascript">Please Enable Javascript</a>
 			</div>
 		</noscript>
-		<?= js_asset('jquery/jquery-1.11.0.min.js') ?>
-		<?= js_asset('bootstrap/bootstrap.min.js') ?>
-		<?= js_asset('fancybox/jquery.fancybox.js') ?>
-		<?= js_asset('prefixfree/prefixfree.min.js') ?>
-<?php if ($controller == 'admin' OR $method == 'search'): ?>
-		<?= js_asset('jquery/jquery-migrate-1.2.1.js') ?>
-		<?= js_asset('jquery-ui/jquery-ui-1.10.4.custom.js') ?>
-		<?= js_asset('jquery-ui/jquery-ui-timepicker-addon.js') ?>
-		<?= js_asset('tagit/tag-it.min.js') ?>
-<?php endif ?>
-		<?= js_asset('waypoints/waypoints.js') ?>
-		<?= js_asset('waypoints/waypoints-sticky.js') ?>
-<?php if ($controller == 'blog' OR $controller == 'portfolio'): ?>
-		<?= js_asset('tagcloud/jquery.tagcloud.js') ?>
-		<?= js_asset('prettify/prettify.js') ?>
-<?php endif ?>
-<?php if ($controller == 'user'): ?>
-		<?= js_asset('terminal/jquery.terminal.js') ?>
-<?php endif ?>
-		<?= js_asset('core.js?t='.time()) ?>
-<?php if ($logged_in): ?>
-		<?= js_asset('admin.js?t='.time()) ?>
-<?php endif ?>
-<?php foreach ($js_files AS $file): ?>
-		<script type="text/javascript" src="<?= $file ?>"></script>
-<?php endforeach ?>
-<?php if ($controller != 'admin' OR $controller != 'user'): ?>
-		<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-51293105-1', 'shippingsoon.com');
-		ga('send', 'pageview');
-		</script>
-<?php endif ?>
     </body>
 </html>
