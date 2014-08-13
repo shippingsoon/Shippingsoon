@@ -10,6 +10,7 @@ class Contact extends Public_Controller
 		parent::__construct();
 		$this->load->library('form_validation');
 	}
+	
 	//
 	public function index()
 	{
@@ -22,6 +23,7 @@ class Contact extends Public_Controller
 		$this->load->view('core/modal');
 		$this->load->view('core/footer', $this->data['layout']);
 	}
+	
 	//
 	public function feedback()
 	{
@@ -32,10 +34,13 @@ class Contact extends Public_Controller
 			array('field' => 'message', 'label' => 'Message', 'rules' => 'trim|max_length[500]|required'),
 			array('field' => 'ignore', 'label' => 'ignore', 'rules' => '')
 		);
+		
 		//Set a default value for the email's status. If the status is false the message was not delivered.
 		$data['status'] = FALSE;
+		
 		//Set the validation rules.
 		$this->form_validation->set_rules($validation_rules);
+		
 		//If the form is submitted and valid, run this block of code.
 		if ($this->form_validation->run()) {
 			$to = 'info@shippingsoon.com';
@@ -46,16 +51,20 @@ class Contact extends Public_Controller
 			if (!$this->input->post('ignore'))
 				$data['status'] = @mail($to, $subject, $message, $headers);
 		}
+		
 		//Set the contact modal's header.
 		$data['header'] = ($data['status'])
 			? 'Message Received'
 			: 'Error Sending Message';
+		
 		//Set the contact modal's body.
 		$data['body'] = ($data['status'])
 			? 'Thank you for contacting us. We will get back to you as soon as possible!'
 			: '<p>Your message was not delivered</p>'.validation_errors();
+		
 		//Set the core modal's response.
 		core_modal($data, $data['header'], $data['body'], 1, NULL);
+		
 		//Send a response back to the frontend.
 		echo json_encode($data);
 	}

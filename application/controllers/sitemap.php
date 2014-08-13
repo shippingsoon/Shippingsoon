@@ -18,15 +18,18 @@ class Sitemap extends Public_Controller
 		//Create a new XML element.
 		$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" />');
 		
+		$xml_files = array(
+			'page-sitemap.xml',
+			'blog-sitemap.xml',
+			'portfolio-sitemap.xml',
+			'search-sitemap.xml'
+		);
 		
-		$sitemap = $xml->addChild('sitemap');
-		$sitemap->addChild('loc', base_url('blog-sitemap.xml'));
-		
-		$sitemap = $xml->addChild('sitemap');
-		$sitemap->addChild('loc', base_url('portfolio-sitemap.xml'));
-
-		$sitemap = $xml->addChild('sitemap');
-		$sitemap->addChild('loc', base_url('search-sitemap.xml'));
+		foreach ($xml_files AS $xml_file) {
+			$sitemap = $xml->addChild('sitemap');
+			$link = base_url($xml_file);
+			$sitemap->addChild('loc', $link);
+		}
 		
 		//Output the XML data.
 		$this->output
@@ -48,7 +51,7 @@ class Sitemap extends Public_Controller
 			$details_link = base_url("portfolio/{$article['slug']}/{$article['article_id']}");
 			
 			//Build the XML file.
-			$this->_build_xml($xml->addChild('url'), $details_link, date(DATE_W3C, strtotime($article['date_modified'])));
+			$this->_build_xml($xml->addChild('url'), $details_link, date(DATE_W3C, strtotime($article['date_modified'])), 'weekly', '0.7');
 		}
 		
 		//Output the XML data.
@@ -71,7 +74,7 @@ class Sitemap extends Public_Controller
 			$details_link = base_url(strtolower("blog/{$article['category']}/{$article['slug']}/{$article['article_id']}"));
 			
 			//Build the XML file.
-			$this->_build_xml($xml->addChild('url'), $details_link, date(DATE_W3C, strtotime($article['date_modified'])));
+			$this->_build_xml($xml->addChild('url'), $details_link, date(DATE_W3C, strtotime($article['date_modified'])), 'weekly', '0.6');
 		}
 		
 		//Output the XML data.
@@ -95,7 +98,40 @@ class Sitemap extends Public_Controller
 			$link = base_url(strtolower("portfolio/search/0/12/$tag"));
 			
 			//Build the XML file.
-			$this->_build_xml($xml->addChild('url'), $link, NULL, 'weekly', '0.1');
+			$this->_build_xml($xml->addChild('url'), $link, NULL, 'daily', '0.1');
+		}
+		
+		//Output the XML data.
+		$this->output
+			->set_content_type('application/xml')
+			->set_output($xml->asXML());
+	}
+	
+	//Outputs a sitemap for various pages.
+	public function page()
+	{
+		//Create a new XML element.
+		$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" />');
+
+		//An array of pages.
+		$pages = array(
+			'',
+			'user/login',
+			'what-does-shipping-soon-mean',
+			'what-does-shipping-soon-mean/resume',
+			'credits',
+			'blog/development',
+			'blog/design',
+			'contact'
+		);
+		
+		//Build the XML file for each page.
+		foreach ($pages AS $page) {
+			//Get a link to this page.
+			$link = base_url($page);
+			
+			//Build the XML file.
+			$this->_build_xml($xml->addChild('url'), $link);
 		}
 		
 		//Output the XML data.

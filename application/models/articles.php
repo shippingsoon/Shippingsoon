@@ -44,7 +44,7 @@ class Articles extends CI_Model
 				ac.title AS category,
 				count(*) AS tally,
 				DATE_FORMAT(a.date_created, '%M %d, %Y') AS date_created_formatted,
-				DATE_FORMAT(a.date_modified, '%M/%d/%Y') AS date_modified_formatted".
+				DATE_FORMAT(a.date_modified, '%M %d, %Y') AS date_modified_formatted".
 				((!empty($tags)) ? ', group_concat(at.tag) AS tags' : '')
 				, FALSE)
 			->from('articles AS a')

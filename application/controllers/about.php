@@ -20,10 +20,12 @@ class About extends Public_Controller
 		$this->load->view('about/index');
 		$this->load->view('core/footer', $this->data['layout']);
 	}
+	
 	public function resume()
 	{
 		//Set the page's title.
 		set_title($this->data, 'Resume', TRUE);
+		
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
 		$this->load->view('core/navigation', $this->data['layout']);
@@ -31,12 +33,15 @@ class About extends Public_Controller
 		$this->load->view('about/resume');
 		$this->load->view('core/footer', $this->data['layout']);
 	}
+	
 	function credits()
 	{
 		set_title($this->data, 'Credits');
+		
 		// Load the views.
 		$this->load->view('core/header', $this->data['layout']);
 		$this->load->view('core/navigation', $this->data['layout']);
+		
 		//$this->load->view('core/banner', array('title' => $this->data['layout']['title']));
 		$this->load->view('about/credits');
 		$this->load->view('core/footer', $this->data['layout']);

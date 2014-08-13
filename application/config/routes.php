@@ -60,6 +60,9 @@ $route['portfolio/(:any)/(:num)'] = 'portfolio/index/$1/$2';
 //sitemap/index
 $route['sitemap.xml'] = 'sitemap/index';
 
+//sitemap/page
+$route['page-sitemap.xml'] = 'sitemap/page';
+
 //sitemap/blog
 $route['blog-sitemap.xml'] = 'sitemap/blog';
 

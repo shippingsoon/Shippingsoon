@@ -8,12 +8,14 @@ class Core extends Public_Controller
 	{
 		parent::__construct();
 	}
+	
 	//Home page.
 	public function index()
 	{
 		//Use tags to retrieve projects.
 		$tags = array('application', 'website', 'software', 'freelance', 'professional', 'design');
 		$this->data['articles'] = $this->articles->get_articles(NULL, $tags, 0, 8);
+
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
 		$this->load->view('core/navigation', $this->data['layout']);
@@ -28,6 +30,7 @@ class Core extends Public_Controller
 		$this->load->view('core/modal');
 		$this->load->view('core/footer', $this->data['layout']);
 	}
+	
 	//Nefarious data mining.
 	public function statistics($statistic_id)
 	{

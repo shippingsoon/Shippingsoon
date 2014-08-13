@@ -18,8 +18,8 @@
 <?php endif ?>
 			</ol>
 <?php  if (isset($article['article_id']) /*AND $logged_in*/): ?>
-			<time datetime="<?= $article['date_created'] ?>" class="breadcrumb pull-right">
-				<i class="fa fa-clock-o"></i> Published: <?= $article['date_created_formatted'] ?>
+			<time datetime="<?= $article['date_modified_formatted'] ?>" class="breadcrumb pull-right">
+				<i class="fa fa-clock-o"></i> Published: <?= $article['date_modified_formatted'] ?>
 			</time>
 <?php endif ?>
 		</div>  <!-- /.col-md-8 -->

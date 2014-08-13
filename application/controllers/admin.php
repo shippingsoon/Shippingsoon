@@ -10,6 +10,7 @@ class Admin extends Admin_Controller
 		$this->load->library(array('form_validation', 'upload'));
 		$this->load->model('articles');
 	}
+	
 	//Admin control panel.
 	public function index()
 	{
@@ -19,6 +20,7 @@ class Admin extends Admin_Controller
 		$this->load->view('admin/index', $this->data);
 		$this->load->view('core/footer', $this->data['layout']);
 	}
+	
 	//Add or edit articles.
 	public function article($article_id = NULL, $slug = NULL)
 	{
@@ -45,15 +47,19 @@ class Admin extends Admin_Controller
 		$this->data['article_id'] = (int) $article_id;
 		foreach ($this->validation_rules AS $rule)
 			$this->data['article'][$rule['field']] = NULL;
+		
 		//Form validation messages.
 		$this->data['status'] = $this->session->flashdata('status');
+		
 		//Set the autocomplete tags.
 		$this->data['auto_complete'] = $this->articles->get_tags(NULL, FALSE);
 		$this->data['categories'] = $this->articles->get_categories();
 		if ($this->data['article_id'])
 			$this->data['pages'] = $this->articles->get_pages((int) $this->data['article_id']);
+		
 		//Set the validation rules.
 		$this->form_validation->set_rules($this->validation_rules);
+		
 		//If the form is submitted and valid, run this block of code.
 		if ($this->form_validation->run()) {
 			$input = $this->input->post(NULL, TRUE);
@@ -77,6 +83,7 @@ class Admin extends Admin_Controller
 				'date_created' => $input['date_created'] ? $input['date_created'] : date('Y-m-d H:i:s'),
 				'date_modified' => $input['date_modified'] ? $input['date_modified'] : date('Y-m-d H:i:s')
 			);
+			
 			//Save the project.
 			if ($this->data['article_id'] = $this->articles->save($this->data['article_id'], $article, $input['pages'], $input['tags'])) {
 				//Set some rules for the upload process.
@@ -96,12 +103,15 @@ class Admin extends Admin_Controller
 					$this->data['config'][$i]['remove_spaces'] = TRUE;
 					$this->data['config'][$i]['upload_path'] .= "{$this->data['article_id']}/";
 					$this->upload->initialize($this->data['config'][$i]);
+					
 					//The file upload path.
 					$path = $this->data['config'][$i]['upload_path'];
+					
 					//If there's no directory try to create one.
 					if (!empty($_FILES[$this->data['files'][$i]]['name']) AND (mkdir($path) OR is_dir($path))) {
 						//Change the directory's permissions.
 						chmod($this->data['config'][$i]['upload_path'], 766);
+						
 						//Upload the files.
 						$this->data['upload']['errors'] = (!$this->upload->do_upload($this->data['files'][$i]))
 							? $this->upload->display_errors()
@@ -125,6 +135,7 @@ class Admin extends Admin_Controller
 				redirect('admin/article');
 			$this->data['article']['tags'] = explode(',', $this->articles->get_tags($this->data['article_id'], FALSE));
 		}
+		
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
 		$this->load->view('core/navigation', $this->data['layout']);
