@@ -6,7 +6,8 @@
 							<h2>The Mission</h2>
 							<h3 class="opensans light-weight">What We Do</h3>
 							<p>
-								We are a free and open source software group located in Savannah, Ga.
+								We are a free and open source software group located in Savannah, Ga. We specialize in both
+								front and back-end development.
 							</p>
 						</div> <!-- /.col-md-4 -->
 						<div class="col-md-4">
