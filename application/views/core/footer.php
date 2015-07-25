@@ -38,7 +38,7 @@
 							<ul class="list-unstyled">
 								<li>
 									<span class="glyphicon glyphicon-envelope"></span>
-									<a href="mailto:info@shippingsoon.com">info@shippingsoon.com</a>
+									<a href="mailto:admin@shippingsoon.com">admin@shippingsoon.com</a>
 								</li>
 <?php /*
 								<li>

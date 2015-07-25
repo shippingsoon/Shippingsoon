@@ -43,7 +43,7 @@ class Contact extends Public_Controller
 		
 		//If the form is submitted and valid, run this block of code.
 		if ($this->form_validation->run()) {
-			$to = 'info@shippingsoon.com';
+			$to = 'admin@shippingsoon.com';
 			$subject = COMPANY.' - Feedback';
 			$message = $this->input->post('message');
 			$headers = 'From: '.$this->input->post('email')."\r\n" .
