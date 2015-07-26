@@ -49,9 +49,9 @@ class Portfolio extends Public_Controller
 			//Retrieve images and source code for this article.
 			$src_path = "uploads/articles/src/{$this->data['article_id']}";
 			$img_path = "uploads/articles/img/{$this->data['article_id']}";
-			$this->data['article']['images'] = file_exists($img_path) ? array_diff(scandir($img_path), array('.', '..', '0.jpg')) : array();
-			$this->data['article']['files'] = file_exists($src_path) ? array_diff(scandir($src_path), array('.', '..')) : array();
-			
+			$this->data['article']['images'] = file_exists($img_path) ? array_diff(scandir($img_path), array('.', '..', '0.jpg', '.DS_Store')) : array();
+			$this->data['article']['files'] = file_exists($src_path) ? array_diff(scandir($src_path), array('.', '..', '.DS_Store')) : array();
+			//die(print_r($this->data['article']['images'], TRUE));
 			//Filter out .PNGs.
 			$this->data['article']['images'] = array_filter($this->data['article']['images'], function($file) {
 				return (pathinfo($file)['extension'] == 'jpg');

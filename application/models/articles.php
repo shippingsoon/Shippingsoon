@@ -52,9 +52,22 @@ class Articles extends CI_Model
 			->group_by('a.article_id');
 		if (!empty($tags)) {
 			$this->db->join('article_tags AS at', 'at.article_id = a.article_id', 'left');
+			/*
 			foreach ($tags AS $tag)
 				if ($tag)
 					$this->db->or_like('at.tag', $tag, (strlen($tag) > 3) ? 'after' : 'none');
+			 */
+			$tag_query = '(';
+			$count = count($tags);
+			foreach ($tags AS $tag) {
+				$wildcard = (strlen($tag) > 3) ? '%' : '';
+				$tag_query .= "at.tag LIKE '$tag$wildcard'";
+				$tag_query .= (--$count) ? ' OR ' : '';
+			}
+			$tag_query .= ')';
+
+			if (!empty($count))
+				$this->db->where($tag_query);
 		}
 		else if ($article_id)
 			$this->db->where(array((($random) ? 'a.article_id !=' : 'a.article_id') => (int) $article_id));
@@ -80,13 +93,15 @@ class Articles extends CI_Model
 			$this->db->order_by('rand()');
 		else {
 			$this->db
-				->order_by('tally', 'desc')
+				//->order_by('tally', 'desc')
 				->order_by('a.date_modified', 'desc');
 		}
 			
 		if (!is_null($limit))
 			$this->db->limit($limit, $offset * $limit);
 		$query = $this->db->get();
+		//if ($category AND !is_array($category))
+		//die ($this->db->last_query());
 		return ($article_id AND !$random) ? $query->row_array() : $query->result_array();
 
 	}

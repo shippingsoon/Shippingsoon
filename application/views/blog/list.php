@@ -11,7 +11,7 @@
 								<?= $article['title'] ?>
 							</a>
 						</h3>
-<?php if ($article['image_url']): ?>
+<?php if ($article['image_url'] AND FALSE): ?>
 						<a class="photo-frame" href="<?= base_url(strtolower("blog/{$article['category']}/{$article['slug']}/{$article['article_id']}")) ?>" title="<?= $article['title'] ?>">
 							<img src="<?= $article['image_url'] ?>" class="img-responsive" alt="<?= $article['title'] ?>"/>
 						</a>

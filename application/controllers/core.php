@@ -14,8 +14,8 @@ class Core extends Public_Controller
 	{
 		//Use tags to retrieve projects.
 		$tags = array('application', 'website', 'software', 'freelance', 'professional', 'design');
-		$this->data['articles'] = $this->articles->get_articles(NULL, $tags, 0, 8);
-
+		$this->data['articles'] = $this->articles->get_articles(NULL, $tags, 0, 8, 'portfolio', TRUE);
+		
 		//Load the views.
 		$this->load->view('core/header', $this->data['layout']);
 		$this->load->view('core/navigation', $this->data['layout']);

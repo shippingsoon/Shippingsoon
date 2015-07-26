@@ -5,7 +5,7 @@
 					<li data-target="#contact-carousel" data-slide-to="1"></li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="item active" data-title="One answer to<br/>a sea of problems" data-subtitle="Need help making a sustainable presence on the web? Shipping Soon assist individuals and small business with every stage of the development process.">
+					<div class="item active" data-title="Your idea shipped<br/>soon" data-subtitle="Need help making a sustainable presence on the web? Shipping Soon assist individuals and small business with every stage of the development process.">
 						<img src="<?= base_url('assets/img/core/pirate-ship-in-a-bottle-1920x600.jpg') ?>" class="img-responsive" data-slide-id="0" alt="pirate ship">
 						<div class="carousel-caption"></div>
 					</div>
